@@ -161,7 +161,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {        	
-        	if(EDEN_SPACE.equals(memoryPoolMXBean.getName())) {
+//System.out.println("getEdenSpaceInit - memoryPoolMXBean.getName() is [" + memoryPoolMXBean.getName() + "]");
+
+        	if(memoryPoolMXBean.getName().contains(EDEN_SPACE)) {
         		
 //System.out.println("getEdenSpaceInit - Return [" + memoryPoolMXBean.getUsage().getInit() / BYTES_PER_MEGABYTE + "]");
         		
@@ -182,7 +184,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(EDEN_SPACE.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(EDEN_SPACE)) {
         		return memoryPoolMXBean.getUsage().getUsed() / BYTES_PER_MEGABYTE;
         	}
         }
@@ -200,7 +202,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(EDEN_SPACE.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(EDEN_SPACE)) {
         		return memoryPoolMXBean.getUsage().getCommitted() / BYTES_PER_MEGABYTE;
         	}
         }
@@ -218,7 +220,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(EDEN_SPACE.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(EDEN_SPACE)) {
         		return memoryPoolMXBean.getUsage().getMax() / BYTES_PER_MEGABYTE;
         	}
         }
@@ -236,7 +238,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(SURVIVOR_SPACE.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(SURVIVOR_SPACE)) {
 	            return memoryPoolMXBean.getUsage().getInit()/ BYTES_PER_MEGABYTE;
         	}
         }
@@ -254,7 +256,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(SURVIVOR_SPACE.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(SURVIVOR_SPACE)) {
         		return memoryPoolMXBean.getUsage().getUsed() / BYTES_PER_MEGABYTE;
         	}
         }
@@ -272,7 +274,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(SURVIVOR_SPACE.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(SURVIVOR_SPACE)) {
 	            return memoryPoolMXBean.getUsage().getCommitted() / BYTES_PER_MEGABYTE;
         	}
         }
@@ -290,7 +292,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(SURVIVOR_SPACE.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(SURVIVOR_SPACE)) {
 	            return memoryPoolMXBean.getUsage().getMax() / BYTES_PER_MEGABYTE;
         	}
         }
@@ -308,7 +310,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {        	
-        	if(TENURED_GEN.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(TENURED_GEN) || memoryPoolMXBean.getName().contains(OLD_GEN)) {
 	            return memoryPoolMXBean.getUsage().getInit()/ BYTES_PER_MEGABYTE;
         	}
         }
@@ -326,7 +328,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(TENURED_GEN.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(TENURED_GEN) || memoryPoolMXBean.getName().contains(OLD_GEN)) {
 	            return memoryPoolMXBean.getUsage().getUsed() / BYTES_PER_MEGABYTE;
         	}
         }
@@ -344,7 +346,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {        	
-        	if(TENURED_GEN.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(TENURED_GEN) || memoryPoolMXBean.getName().contains(OLD_GEN)) {
 	            return memoryPoolMXBean.getUsage().getCommitted() / BYTES_PER_MEGABYTE;
         	}
         }
@@ -362,7 +364,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-           	if(TENURED_GEN.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(TENURED_GEN) || memoryPoolMXBean.getName().contains(OLD_GEN)) {
 	            return memoryPoolMXBean.getUsage().getMax() / BYTES_PER_MEGABYTE;
         	}
         }
@@ -380,7 +382,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {        	
-        	if(PERM_GEN.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(PERM_GEN)) {
 	            return memoryPoolMXBean.getUsage().getInit()/ BYTES_PER_MEGABYTE;
         	}
         }
@@ -398,7 +400,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {        	
-        	if(PERM_GEN.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(PERM_GEN)) {
 	            return memoryPoolMXBean.getUsage().getUsed() / BYTES_PER_MEGABYTE;
         	}
         }
@@ -416,7 +418,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {        	
-        	if(PERM_GEN.equals(memoryPoolMXBean.getName())) {        		
+        	if(memoryPoolMXBean.getName().contains(PERM_GEN)) {
 	            return memoryPoolMXBean.getUsage().getCommitted() / BYTES_PER_MEGABYTE;
         	}
         }
@@ -434,7 +436,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {        	
-        	if(PERM_GEN.equals(memoryPoolMXBean.getName())) {
+        	if(memoryPoolMXBean.getName().contains(PERM_GEN)) {
 	            return memoryPoolMXBean.getUsage().getMax() / BYTES_PER_MEGABYTE;
         	}
         }
@@ -450,7 +452,10 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 	
 	private static final String EDEN_SPACE = "Eden Space";
 	private static final String SURVIVOR_SPACE = "Survivor Space";
+	
+	private static final String OLD_GEN = "Old Gen";
 	private static final String TENURED_GEN = "Tenured Gen";
+	
 	private static final String PERM_GEN = "Perm Gen";
 	
 	// Members 
