@@ -37,8 +37,8 @@ import weblogic.logging.NonCatalogLogger;
 public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 	
 	// Constants
-	private static final String WLJVMS_APP_NAME = "WLJvmStats";
-	private static final String WLJVMS_APP_VERSION = "0.0.1";
+	private static final String WL_JVM_APP_NAME = "WLJvmStats";
+	private static final String WL_JVM_APP_VERSION = "0.0.1";
 	//private static final int PERCENT = 100;
 	private static final int BYTES_PER_MEGABYTE = 1024*1024;
 	
@@ -59,7 +59,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 	 * @param netInterfaceNames Comma separated list of names of the preferred network interface to try to monitor
 	 */
 	public WLJvmStats() {
-		log = new NonCatalogLogger(WLJVMS_APP_NAME);
+		log = new NonCatalogLogger(WL_JVM_APP_NAME);
 	}
 	
 	/**
@@ -102,7 +102,7 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 	 * @return The version of WLHostMachineStats MBean
 	 */
 	public String getMBeanVersion() {
-		return WLJVMS_APP_VERSION;
+		return WL_JVM_APP_VERSION;
 	}
 	
 	/**

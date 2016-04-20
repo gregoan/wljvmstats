@@ -43,7 +43,7 @@ public class WLJvmStatsMBeanRegistrar {
 		InitialContext ctx = new InitialContext(); 
 		MBeanServer mbs = (MBeanServer) ctx.lookup(RUNTIME_MBEAN_SERVER_JNDI_KEY); 
 		WLJvmStats mbean = new WLJvmStats();
-		ObjectName mbeanObjName = new ObjectName(WLJVM_STATS_MBEAN_NAME);
+		ObjectName mbeanObjName = new ObjectName(WL_JVM_STATS_MBEAN_NAME);
 		mbs.registerMBean(mbean, mbeanObjName);
 		ctx.close();
 	}
@@ -59,7 +59,7 @@ public class WLJvmStatsMBeanRegistrar {
 	public void deregister() throws NamingException, MBeanRegistrationException, InstanceNotFoundException, MalformedObjectNameException {
 		InitialContext ctx = new InitialContext(); 
 		MBeanServer mbs = (MBeanServer) ctx.lookup(RUNTIME_MBEAN_SERVER_JNDI_KEY);
-		ObjectName mbeanObjName = new ObjectName(WLJVM_STATS_MBEAN_NAME);
+		ObjectName mbeanObjName = new ObjectName(WL_JVM_STATS_MBEAN_NAME);
 		
 		if ((mbeanObjName != null) && (mbs.isRegistered(mbeanObjName))) { 
 			mbs.unregisterMBean(mbeanObjName);
@@ -70,5 +70,5 @@ public class WLJvmStatsMBeanRegistrar {
 
 	// Constants
 	private final static String RUNTIME_MBEAN_SERVER_JNDI_KEY = "java:comp/env/jmx/runtime";
-	private final static String WLJVM_STATS_MBEAN_NAME = "wljvmstats:name=WLJvmStats";
+	private final static String WL_JVM_STATS_MBEAN_NAME = "wljvmstats:name=WLJvmStats";
 }
