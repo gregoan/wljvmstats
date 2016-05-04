@@ -51,7 +51,6 @@ public class AppStartupShutdownListener implements ServletContextListener {
 			throw new RuntimeException("Unable to destroy application. Cause: " + e, e);
 		} 
 	}
-
 	
 	// Members
 	private WLJvmStatsMBeanRegistrar wlJvmStatsMBeanRegistrar = new WLJvmStatsMBeanRegistrar();
