@@ -25,7 +25,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 /**
- * Responsible for registering and de-registering the WLHostMachineStats MBean
+ * Responsible for registering and de-registering the WLJvmStats MBean
  * on the current WebLogic server.
  */
 public class WLJvmStatsMBeanRegistrar {

@@ -96,10 +96,10 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 	}
 
 	/**
-	 * The version of the WLHostMachineStats MBean. 
+	 * The version of the WLJvmStats MBean. 
 	 * Format: "x.x.x". Example: "0.1.0".
 	 * 
-	 * @return The version of WLHostMachineStats MBean
+	 * @return The version of WLJvmStats MBean
 	 */
 	public String getMBeanVersion() {
 		return WL_JVM_APP_VERSION;
