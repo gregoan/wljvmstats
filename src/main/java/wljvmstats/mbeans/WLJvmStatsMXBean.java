@@ -51,4 +51,9 @@ public interface WLJvmStatsMXBean {
 	public double getPermGenUsed();
 	public double getPermGenCommitted();
 	public double getPermGenMax();
+	
+	public double getMetaSpaceInit();
+	public double getMetaSpaceUsed();
+	public double getMetaSpaceCommitted();
+	public double getMetaSpaceMax();
 }

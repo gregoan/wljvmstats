@@ -34,7 +34,7 @@ The project also includes an Eclipse (OEPE) '.project' Project file, enabling de
 To re-build the project, first ensure the Java SDK and Maven is installed and their 'bin' directories are present in PATH environment variable, then check the values in the pom.xml file in the project's root directory to ensure this reflects your local WebLogic environment settings. 
 Run the following commands to clean the project, compile the source code and build the WAR web-application:
 
- > mvn package
+ > mvn clean package
 
 Project Contact
 ---------------

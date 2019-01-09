@@ -50,6 +50,8 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 	
 	private static final String PERM_GEN = "Perm Gen";
 	
+	private static final String META_SPACE = "Metaspace";
+		
 	// Members 
 	private final NonCatalogLogger log;
 		
@@ -177,9 +179,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {        	
-        	if(memoryPoolMXBean.getName().contains(EDEN_SPACE)) {        		
-        		return memoryPoolMXBean.getUsage().getInit() / BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(EDEN_SPACE)) {        		
+	        		return memoryPoolMXBean.getUsage().getInit() / BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -192,9 +194,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(memoryPoolMXBean.getName().contains(EDEN_SPACE)) {
-        		return memoryPoolMXBean.getUsage().getUsed() / BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(EDEN_SPACE)) {
+	        		return memoryPoolMXBean.getUsage().getUsed() / BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -207,9 +209,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(memoryPoolMXBean.getName().contains(EDEN_SPACE)) {
-        		return memoryPoolMXBean.getUsage().getCommitted() / BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(EDEN_SPACE)) {
+	        		return memoryPoolMXBean.getUsage().getCommitted() / BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -222,9 +224,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(memoryPoolMXBean.getName().contains(EDEN_SPACE)) {
-        		return memoryPoolMXBean.getUsage().getMax() / BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(EDEN_SPACE)) {
+	        		return memoryPoolMXBean.getUsage().getMax() / BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -237,9 +239,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(memoryPoolMXBean.getName().contains(SURVIVOR_SPACE)) {
-	            return memoryPoolMXBean.getUsage().getInit()/ BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(SURVIVOR_SPACE)) {
+		            return memoryPoolMXBean.getUsage().getInit()/ BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -252,9 +254,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(memoryPoolMXBean.getName().contains(SURVIVOR_SPACE)) {
-        		return memoryPoolMXBean.getUsage().getUsed() / BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(SURVIVOR_SPACE)) {
+	        		return memoryPoolMXBean.getUsage().getUsed() / BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -267,9 +269,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(memoryPoolMXBean.getName().contains(SURVIVOR_SPACE)) {
-	            return memoryPoolMXBean.getUsage().getCommitted() / BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(SURVIVOR_SPACE)) {
+		            return memoryPoolMXBean.getUsage().getCommitted() / BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -282,9 +284,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(memoryPoolMXBean.getName().contains(SURVIVOR_SPACE)) {
-	            return memoryPoolMXBean.getUsage().getMax() / BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(SURVIVOR_SPACE)) {
+		            return memoryPoolMXBean.getUsage().getMax() / BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -297,9 +299,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {        	
-        	if(memoryPoolMXBean.getName().contains(TENURED_GEN) || memoryPoolMXBean.getName().contains(OLD_GEN)) {
-	            return memoryPoolMXBean.getUsage().getInit()/ BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(TENURED_GEN) || memoryPoolMXBean.getName().contains(OLD_GEN)) {
+		            return memoryPoolMXBean.getUsage().getInit()/ BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -312,9 +314,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(memoryPoolMXBean.getName().contains(TENURED_GEN) || memoryPoolMXBean.getName().contains(OLD_GEN)) {
-	            return memoryPoolMXBean.getUsage().getUsed() / BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(TENURED_GEN) || memoryPoolMXBean.getName().contains(OLD_GEN)) {
+		            return memoryPoolMXBean.getUsage().getUsed() / BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -327,9 +329,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {        	
-        	if(memoryPoolMXBean.getName().contains(TENURED_GEN) || memoryPoolMXBean.getName().contains(OLD_GEN)) {
-	            return memoryPoolMXBean.getUsage().getCommitted() / BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(TENURED_GEN) || memoryPoolMXBean.getName().contains(OLD_GEN)) {
+		            return memoryPoolMXBean.getUsage().getCommitted() / BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -342,9 +344,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {
-        	if(memoryPoolMXBean.getName().contains(TENURED_GEN) || memoryPoolMXBean.getName().contains(OLD_GEN)) {
-	            return memoryPoolMXBean.getUsage().getMax() / BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(TENURED_GEN) || memoryPoolMXBean.getName().contains(OLD_GEN)) {
+		            return memoryPoolMXBean.getUsage().getMax() / BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -356,10 +358,10 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 			
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
-        {        	
-        	if(memoryPoolMXBean.getName().contains(PERM_GEN)) {
-	            return memoryPoolMXBean.getUsage().getInit()/ BYTES_PER_MEGABYTE;
-        	}
+        {         	
+	        	if(memoryPoolMXBean.getName().contains(PERM_GEN)) {
+		            return memoryPoolMXBean.getUsage().getInit()/ BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -372,9 +374,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {        	
-        	if(memoryPoolMXBean.getName().contains(PERM_GEN)) {
-	            return memoryPoolMXBean.getUsage().getUsed() / BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(PERM_GEN)) {
+		            return memoryPoolMXBean.getUsage().getUsed() / BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -387,9 +389,9 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
         {        	
-        	if(memoryPoolMXBean.getName().contains(PERM_GEN)) {
-	            return memoryPoolMXBean.getUsage().getCommitted() / BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(PERM_GEN)) {
+		            return memoryPoolMXBean.getUsage().getCommitted() / BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
@@ -401,10 +403,70 @@ public class WLJvmStats implements WLJvmStatsMXBean, MBeanRegistration {
 				
 		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
         for(MemoryPoolMXBean memoryPoolMXBean: list)
+        {    
+	        	if(memoryPoolMXBean.getName().contains(PERM_GEN)) {
+		            return memoryPoolMXBean.getUsage().getMax() / BYTES_PER_MEGABYTE;
+	        	}
+        }
+        return -1;
+	}
+	
+	/**
+	 * 
+	 */
+	public double getMetaSpaceInit() {
+			
+		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
+        for(MemoryPoolMXBean memoryPoolMXBean: list)
+        {         	
+	        	if(memoryPoolMXBean.getName().contains(META_SPACE)) {	        		
+		            return memoryPoolMXBean.getUsage().getInit()/ BYTES_PER_MEGABYTE;
+	        	}
+        }
+        return -1;
+	}
+	
+	/**
+	 * 
+	 */
+	public double getMetaSpaceUsed() {
+				
+		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
+        for(MemoryPoolMXBean memoryPoolMXBean: list)
         {        	
-        	if(memoryPoolMXBean.getName().contains(PERM_GEN)) {
-	            return memoryPoolMXBean.getUsage().getMax() / BYTES_PER_MEGABYTE;
-        	}
+	        	if(memoryPoolMXBean.getName().contains(META_SPACE)) {
+	        		return memoryPoolMXBean.getUsage().getUsed() / BYTES_PER_MEGABYTE;
+	        	}
+        }
+        return -1;
+	}
+	
+	/**
+	 * 
+	 */
+	public double getMetaSpaceCommitted() {
+				
+		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
+        for(MemoryPoolMXBean memoryPoolMXBean: list)
+        {        	
+	        	if(memoryPoolMXBean.getName().contains(META_SPACE)) {
+	        		return memoryPoolMXBean.getUsage().getCommitted() / BYTES_PER_MEGABYTE;
+	        	}
+        }
+        return -1;
+	}
+	
+	/**
+	 * 
+	 */
+	public double getMetaSpaceMax() {
+				
+		List<MemoryPoolMXBean> list = (List<MemoryPoolMXBean>) ManagementFactory.getMemoryPoolMXBeans();
+        for(MemoryPoolMXBean memoryPoolMXBean: list)
+        {        	
+	        	if(memoryPoolMXBean.getName().contains(META_SPACE)) {
+	        		return memoryPoolMXBean.getUsage().getMax() / BYTES_PER_MEGABYTE;
+	        	}
         }
         return -1;
 	}
