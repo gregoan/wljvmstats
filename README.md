@@ -2,7 +2,7 @@ WLJvmStats
 ------------
 
  * Copyright (c) 2019 GREGOIRE Alain
- * Version:  0.1
+ * Version:  0.3
  * Licence:  "3-clause" BSD based Licence - refer to the files 'LICENSE'
  * Last updated:  01-Jan-2019
  * Home Page:  https://github.com/gregoan/wljvmstats
