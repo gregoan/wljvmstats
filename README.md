@@ -23,6 +23,7 @@ WLJvmStats is a deployable JEE web-application (WAR archive). It is only support
 
 Quick Installation How To
 -------------------------
+
    1. Navigate to this project's 'Download' page and download the zip file: wljvmstats-nn.zip
    2. Unpack the zip file to a temporary directory.
    3. Start (or re-start) your WebLogic domain's servers, so that the previous steps, above, take affect. 
@@ -41,4 +42,4 @@ Run the following commands to clean the project, compile the source code and bui
 Project Contact
 ---------------
 
-GREGOIRE Alain (send email to the "gmail.com" email address for gmail user 'gregoire.alain')
+GREGOIRE Alain (send email to the "gmail.com" email address for gmail user "gregoire.alain")
