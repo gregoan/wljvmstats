@@ -33,8 +33,11 @@ Building From Source
 --------------------
 
 This project includes a Maven buildfile in the root directory to enable the project to be completely re-built from source and modified and enhanced where necessary.
+
 The project also includes an Eclipse (OEPE) '.project' Project file, enabling developers to optionally use Eclipse to modify the source (just import WLJvmStats as an existing project into Eclipse. 
+
 To re-build the project, first ensure the Java SDK and Maven is installed and their 'bin' directories are present in PATH environment variable, then check the values in the pom.xml file in the project's root directory to ensure this reflects your local WebLogic environment settings. 
+
 Run the following commands to clean the project, compile the source code and build the WAR web-application:
 
  > mvn clean package
